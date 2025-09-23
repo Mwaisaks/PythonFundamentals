@@ -8,4 +8,7 @@ print(type(name) == str)
 
 print(isinstance(age, float))
 
+def hello(name='my friend'):
+    print("Hello " + name)
 
+hello()
