@@ -1,14 +1,34 @@
-#Variables
-name = "Beau"
-age = 39
+import random
 
-# To get the type of data
-#print(type(name))
-print(type(name) == str)
+cards = []
+suits = ["clubs", "hearts", "spades", "diamonds"]
+ranks = []
 
-print(isinstance(age, float))
+specials = {"A": 11, "J": 10, "Q": 10, "K": 10}
 
-def hello(name='my friend'):
-    print("Hello " + name)
+for r in ["A"] + [str(i) for i in range(2, 11)] +["J", "Q", "K"]:
+    if r in specials:
+        value = specials[r]
+    else:
+        value = int(r)
+    ranks.append({"rank": r,
+                  "value": value})
 
-hello()
+print(ranks)
+
+for suit in suits:
+    for rank in ranks:
+        cards.append([suit, rank])
+
+def shuffle():
+    random.shuffle(cards)
+
+def deal(number):
+    cards_dealt = []
+    for x in range(number):
+        card = cards.pop()
+        cards_dealt.append(card)
+    return cards_dealt
+
+shuffle()
+

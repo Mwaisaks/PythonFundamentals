@@ -31,8 +31,9 @@ print(f"Next year you'll be {age + 1}")
 ---
 
 ## Variables
+Identifier - names given to variables
 
-### Variable Naming Rules
+### Identifier Rules
 - Start with letter or underscore (not number)
 - Can contain letters, numbers, underscores
 - Case-sensitive (`name` ≠ `Name`)
